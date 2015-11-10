@@ -4,7 +4,7 @@
  * Version: 1.3.2 -- 2015-10-27T14:48:21.672Z
  * License: MIT
  */
-
+ 
 
  (function () {
 'use strict';
@@ -287,7 +287,7 @@ angular.module('ui.scroll', []).directive('uiScrollViewport', function() {
             }
           };
           shouldLoadTop = function() {
-            return (builder.topDataPos() > topVisiblePos() - bufferPadding());
+            return !bof && (builder.topDataPos() > topVisiblePos() - bufferPadding());
           };
           clipTop = function() {
             var item, itemHeight, itemTop, j, len, newRow, overage, rowTop, topHeight;
