@@ -512,7 +512,6 @@ angular.module('ui.scroll', []).directive('uiScrollViewport', function() {
                     return;
                   }
                   if (result.length < bufferSize) {
-                    eof = true;
                     builder.bottomPadding(0);
                   }
                   if (result.length > 0) {
@@ -522,6 +521,8 @@ angular.module('ui.scroll', []).directive('uiScrollViewport', function() {
                       ++next;
                       insertItem('append', item);
                     }
+                  } else {
+                    eof = true;
                   }
                   return adjustBufferAfterFetch(rid);
                 });
